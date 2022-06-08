@@ -60,10 +60,9 @@ const characterSection = document.getElementById('character-section');
 const [headImage, middleImage, pantsImage] = characterSection.querySelectorAll('img');
 
 function displayCharacter() {
-    // *** Set the src properties for the three images.
-    // You can use:
-    // 'assets/character/' + <get prop value here> + '-head.png'
-    // to format the correct file name
+    headImage.src = 'assets/character/' + character.head + '-head.png';
+    middleImage.src = 'assets/character/' + character.middle + '-middle.png';
+    pantsImage.src = 'assets/character/' + character.pants + '-pants.png';
 }
 
 // Phrases
