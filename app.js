@@ -72,7 +72,11 @@ const phraseList = phrasesSection.querySelector('ul');
 function displayPhrases() {
     phraseList.innerHTML = '';
 
-    // ** Create an li for each phrase and append to the list
+    for (const phrase of character.phrases) {
+        const li = document.createElement('li');
+        li.textContent = phrase;
+        phraseList.appendChild(li);
+    }
 }
 
 // page load actions
