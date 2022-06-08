@@ -38,18 +38,22 @@ function displayDesigner() {
 // AddPhrase
 const addPhraseSection = document.getElementById('add-phrase-section');
 const phraseInput = addPhraseSection.querySelector('input');
-// *** Select the button from the add phrase section
-// const phraseButton = ?;
+const phraseButton = addPhraseSection.querySelector('button');
 
 function handleAddPhrase() {
-    // *** add the current phrase value to the character phrases
+    const phrase = phraseInput.value.trim();
+    if (phrase) {
+        character.phrases.push(phrase);
+    }
 
     displayPhrases();
     phraseInput.value = '';
     phraseInput.focus();
 }
 
-// *** Add a click handler to the phrase button that calls handleAddPhrase
+phraseButton.addEventListener('click', () => {
+    handleAddPhrase();
+});
 
 phraseInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
